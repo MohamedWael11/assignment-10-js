@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Bookmarker</title>
+</head>
+<body>
+    <main class="vh-100">
+        <div class="container d-flex justify-content-center align-items-center flex-column py-5">
+            <header>
+                <h1 class="head position-relative">Bookmarker</h1>
+            </header>
+            <div class="book-section d-flex justify-content-center align-items-center flex-column gap-4 w-100 p-3 py-4 mt-5">
+                <h2 class="mt-2"><i class="fa-solid fa-bookmark"></i>Bookmark your favorite sites<i class="fa-solid fa-bookmark"></i></h2>
+                <div class="site d-flex justify-content-center flex-column w-100 p-2">
+                    <label for="siteNAme" class="pb-2">
+                        <i class="fa-solid fa-book-bookmark pe-2"></i>
+                        Site Name
+                    </label>
+                    <input oninput="valition(this)" type="text" id="siteName" placeholder="Bookmarker Name" class="is-invalid p-1 border border-2 rounded rounded-2 form-control">
+                    <div class="alert alert-danger p-1 mt-2 d-none">
+                        <small>Site name must contain at least 3 characters</small>
+                    </div>
+                </div>
+                <div class="site d-flex justify-content-center flex-column w-100 p-2">
+                    <label for="websiteUrl" class="pb-2">
+                        <i class="fa-solid fa-link pe-2"></i>
+                        Site URL
+                    </label>
+                    <input oninput="valition(this)" type="text" id="websiteUrl" placeholder="website URL" class="form-control p-1 border border-2 rounded rounded-2 is-invalid" >
+                    <div class="alert alert-danger p-1 mt-2 d-none">
+                        <small>Site URL must be a valid one</small>
+                    </div>
+                </div>
+                <button id="btnAdd"  onclick="addTask()" class="btn btn-danger px-5 py-2 mb-2 ">Submit</button>
+            </div>
+            <table class="table text-center mt-3 bg-light mb-0 text-center rounded-2 overflow-hidden">
+                <thead>
+                    <tr><th class="text-capitalize">index</th>
+                        <th class="text-capitalize">Website Name</th>
+                        <th class="text-capitalize">Visit</th>
+                        <th class="text-capitalize">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="AllTask">
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+
+
+
+    <script src="./js/code.js"></script>
+</body>
+</html>
